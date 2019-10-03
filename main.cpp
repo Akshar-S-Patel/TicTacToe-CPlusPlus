@@ -2042,7 +2042,7 @@ public:
 
 
 int main(){
-/*
+
     cout<<"\n\n\n\n\n\t\t\t ===========================";
     cout<<"\n\t\t\t  Make by INDIAN PROGRAMMERS";
     cout<<"\n\t\t\t ===========================";
@@ -2051,7 +2051,6 @@ int main(){
         cout<<(char)177;
         for(double d=0;d<=10000000;d++);
     }
-*/
     while(1){
     int a;
     Akshar:
@@ -2061,13 +2060,10 @@ int main(){
     printf("%c %c %c\n\n1.Play Human Vs Human",1,3,2);
     printf("\n2.Play Computer Vs Human");
     printf("\n3.Play Human Vs Computer");
-    printf("\n4.Play Randomly");
     printf("\n0.Exit");
     printf("\n\n==>Enter Choice:");
     scanf("%d",&a);
     mode = a - 1 ;
-    printf("\n\nLoading.....");
-    delay(2000);
     if(a==1){
         system("cls");
         fflush(stdin);
@@ -2295,125 +2291,17 @@ int main(){
             }
         }
     }
-    else if(a==4){
-        system("cls");
-        fflush(stdin);
-        printf("Enter A Player Name Playing For X:");
-        gets(name[1]);
-        fflush(stdin);
-        strcpy(name[0],"Mr. Computer");
-        strcpy(Option,"Human Vs Computer");
-        srand(time(NULL));
-        random = rand() % 2;
-
-        while(1){
-
-                ChangePlayer();
-                system("cls");
-                if(random==0)
-                    printf("\n\n\n\n\n\n\n\n\n\n\n\t\t==>It's Now %s's Turn First",name[q]);
-                else
-                    printf("\n\n\n\n\n\n\n\n\n\n\n\t\t==>It's Mr. Computer's Turn First");
-                getch();
-
-            while(1){
-                    system("cls");
-                    Board();
-                if(random == 0){
-                    player = 'X';q=1;
-                    Input();
-                }else{
-                    player ='O';q=0;
-                    PcH();
-                }
-                    if(ex==-1){
-                        printf("\n\nLoading.....");
-                        delay(2000);
-                        goto Akshar;
-                    }
-                    else if (Win()==1)
-                      {
-                          if(player=='X')
-                            x++;
-                          else if(player=='O')
-                            o++;
-                          system("cls");
-                          random = rand() % 2;
-                          Board();
-                          printf("\n\n\a\a\a\a\a==>%c is Won ",player);
-                          getch();
-                          Reset1();
-                          break;
-                      }
-                    else if (Win()==0)
-                    {
-                         d++;
-                         system("cls");
-                         random = rand() % 2;
-                         Board();
-                         printf("\n\n==>It's Draw\a\a\a");
-                         delay(1000);
-                         printf("\a\a\a");
-                         delay(1000);
-                         printf("\a\a\a");
-                         getch();
-                         Reset1();
-                         break;
-                    }
-                    system("cls");
-                    ChangePlayer();
-                    Board();
-                    if(random == 0){
-                        player ='O';q=0;
-                        Pc_2();
-                    }else{
-                        player = 'X';q=1;
-                        Input();
-                    }
-                    if(ex==-1){
-                        printf("\n\nLoading.....");
-                        delay(2000);
-                        goto Akshar;
-                    }
-                    else if (Win()==1)
-                      {
-                          if(player=='X')
-                            x++;
-                          else if(player=='O')
-                            o++;
-                          system("cls");
-                          random = rand() % 2;
-                          Board();
-                          printf("\n\n\a\a\a\a\a==>%c is Won ",player);
-                          getch();
-                          Reset1();
-                          break;
-                      }
-                    else if (Win()==0)
-                    {
-                         d++;
-                         system("cls");
-                         random = rand() % 2;
-                         Board();
-                         printf("\n\n==>It's Draw\a\a\a");
-                         delay(1000);
-                         printf("\a\a\a");
-                         delay(1000);
-                         printf("\a\a\a");
-                         getch();
-                         Reset1();
-                         break;
-                    }
-                    ChangePlayer();
-            }
-        }
-    }
     else if(a==0){
 
         exit(0);
     }
-    
+    else {
+        cout << endl <<"Wrong Input !!! Press any key to continue";
+        getch();
+    }
+
     }
     return 0;
 
 }
+
